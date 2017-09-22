@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{url_for('static',filename='course/css/course_style.css')}}">
+        <title>
+            Course Wise Content
+        </title>
+		
+<link rel="shortcut icon" href="http://www.iitbhu.ac.in/itbhu.ico" type="image/x-icon" />
+    </head>
+    <body >
+        <div class="header">
+            <div class="mysrch">
+                <input type="text" placeholder="Search" class="srch" size="25" />
+                <div class="button">
+                <button class="c1" >Search
+                </button>
+                <button class="c1">
+                    Search Google
+                </button>
+                    </div>
+            </div>
+            <header>
+                <img src="{{url_for('static',filename='course/img/logo.jpg')}}" class="imgh" />
+                <a href="/login_home/">
+                <button id="styling">Login</button>
+                    </a>
+            </header>
+        </div>
+		<div class="content2">
+            <div class="content">
+            <ul class="ult">
+                <li class="uli"><a href="/">Home</a></li>
+                <li class="uli"><a href="/exampapers/">Examinations</a></li>
+                <li class="uli"><a href="/tutorials/">Tutorials</a></li>
+                <li class="uli"><a href="/assignments/">Assignments</a></li>
+                <li class="uli"><a href="http://www.iitbhu.ac.in/news/">Recent Activities</a></li>
+                <li class="uli"><a href="http://www.iitbhu.ac.in/institute/portals/index.htm">Intranet portals</a></li>
+            </ul>
+                </div>
+				<div class="context_box" >
+				<style>
+				.x:hover
+				{
+				color:blue;
+				}
+				</style>
+				<ul>
+				{% for i in diction %}
+					<a href="/files/{{ i[0] }}"><li class="x" >{{ i[0] }}</li><br></a>
+				{% endfor %}
+				</ul>
+				</div>
+		</div>
+        <footer class="footer">
+
+        </footer>
+    </body>
+</html>

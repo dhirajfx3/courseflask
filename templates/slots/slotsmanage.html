@@ -1,0 +1,138 @@
+<!-- user -username
+	logout -image
+	search -search
+	sn -button
+	add -aff file
+	an -add now
+-->
+<!doctype html>
+	<html>
+		<head>
+		<style>
+			.table
+			{
+				margin-top:50px;
+			}
+			table
+			{
+				margin-top:50px;
+				margin-left:50px;
+				border:2px solid black;
+			}
+			th
+			{
+				border:2px solid black;
+				width:200px;
+				text-align:center;
+			}
+			td
+			{
+				border:1px solid black;
+				width:200px;
+				text-align:center;
+			}
+			.button
+			{
+			border:None;padding:3px 3px 3px 3px;margin:5px 5px 5px 50px;
+			}
+			.work
+			{
+				margin:50px;
+			}
+		</style>
+<link rel="shortcut icon" href="http://www.iitbhu.ac.in/itbhu.ico" type="image/x-icon" />
+			<title>
+				Home {{ mail }}
+			</title>
+		<link rel="stylesheet" href="{{url_for('static',filename='my_css.css')}}"/>
+		<script src="{{url_for('static',filename='jquery.js')}}"></script>
+		<script src="{{url_for('static',filename='jsq2.js')}}" type="text/javascript" ,charset="utf-8"></script>
+		</head>
+	<body class="body2" id="bg_img" style="background:linear-gradient(60deg,green,yellow,aqua);height:640px;overflow:clip;">
+	<h1 align='center' class="text2" > Welcome <br> <i>Slots management</i><br> </h1>
+	<text align='left'  class="text1" style="margin-left:2%;margin-bottom:"> {{ mail }} </text>
+	<form action='/logout/' name='f1' method="POST" >
+		<input type='text' name='mail'  value='{{mail}}' hidden='hidden'/>
+		<input type='submit' class="log"  value="Logout" id='log_o' />
+	</form>
+	<div>
+	<table>
+	<tr>
+	<th>
+	Select
+	</th>
+	<th>
+		Department
+	</th>
+	<th>
+		Name
+	</th>
+	<th>
+		Last updated
+	</th>
+	</tr>
+	<form action='/slotchange' method='post'>
+	{% for i in data %}
+	<tr>
+	<td>
+		{% if i[3]=='filled' %}
+			<input type="checkbox" name="{{ i[0] + " " + i[1] }}" value="{{ i[0] + " " + i[1] }}" checked></input>
+		{% else %}
+			<input type="checkbox" name="{{ i[0] + " " + i[1] }}" value="{{ i[0] + " " + i[1] }}"></input>
+		{% endif %}
+	</td>
+	<td>
+		{{ i[0].upper() }}
+	</td>
+	<td>
+		{{ i[1] }}
+	</td>
+	<td>
+		{{ i[2] }}
+	</td>
+	</tr>
+	{% endfor %}
+	</table>
+	<input type=submit class="button" ></input>
+	</form>
+	<br><br>
+	<form class="work" action='/slotsadd' method='post'>
+	<select name='dept' >
+		<option   value='cse' selected>Computer Science And Engineering</option>
+		<option   value='mnc'>Mathematical Sciences</option>
+		<option   value='ee'selected>Electrical</option>
+		<option   value='ece'>Electronics</option>
+		<option   value='physics'>Physics</option>
+	</select>
+	<select name='avail' >
+		<option   value='filled' selected>Filled</option>
+		<option   value='avail'>Not filled</option>
+	</select>
+	<input type=text name="name" placeholder="Slot Location e.g Lt 1.1B" ></input>
+	<input type=submit ></input>
+	</form>
+	</div>
+	</body>
+	<script type="text/javascript" charset="utf-8">
+			var t=0;
+			function al()
+			{	if(t%2==0)
+				{
+				$('.body2').css('background','linear-gradient(60deg,green,yellow,green)');
+				}
+				else
+				{
+				$('.body2').css('background','linear-gradient(60deg,aqua,yellow,aqua)');
+				}
+				t=t+1;
+			}
+				$(document).ready(function(){
+				$('#srch').focus(function(){
+				document.getElementById('srch').placeholder="";});
+				$('#srch').focusout(function(){
+				document.getElementById('srch').placeholder="Search person exactly by e-mail";
+											});
+				window.setInterval(al,10000);});
+			</script>
+	</html>
+	

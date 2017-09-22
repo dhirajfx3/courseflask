@@ -1,0 +1,54 @@
+<!doctype html>
+
+</body>
+</html>
+	<html>
+		<head>
+		
+<link rel="shortcut icon" href="http://www.iitbhu.ac.in/itbhu.ico" type="image/x-icon" />
+		<link rel="stylesheet" href="{{css}}"/>
+		<script src="{{sio}}"></script>
+		<script src="{{jq}}"></script>
+		<script src="{{my_jsq}}"></script>
+			<title>
+				{{mail}}
+			</title>
+		</head>
+		<body class="body2" id="bg_img" style="background:linear-gradient(60deg,green,yellow,aqua);height:640px;overflow:clip;">
+		<text  value="{{mail}}"/>
+				<input type="text" id="curr" value="{{mail}}" hidden="hidden"/>
+						<h1 align='center' class="text2" id='debug' > Welcome <br> <i> Chat service </i><br> </h1>
+			<text align='left'  class="text1" style="margin-left:2%;"> {{mail}} </text>
+			<form action='/logout/' name='f1' method="POST" >
+		<input type='text' name='mail'  value='{{mail}}' hidden='hidden'/>
+		<input type='submit' class="log"  value="Logout" id='log_o' />
+	</form>
+			<div class="above_box" id="{{user}}">
+			<div class="just">
+				<text class="title" >{{user}}</text>
+			</div>
+			<div class="box">
+			</div>
+			<div class="sender">
+				<input type="text" size="20" placeholder="Enter text here" class="sender2"></input>
+			<button class="send" >Send</button>
+			</div>
+			</div>
+		</body>
+		<script type="text/javascript" charset="utf-8">
+			var t=0;
+			function al()
+			{	if(t%2==0)
+				{
+				$('.body2').css('background','linear-gradient(60deg,green,yellow,green)');
+				}
+				else
+				{
+				$('.body2').css('background','linear-gradient(60deg,aqua,yellow,aqua)');
+				}
+				t=t+1;
+			}
+				$(document).ready(function(){
+				window.setInterval(al,100000);});
+			</script>
+	</html>

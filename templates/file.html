@@ -1,0 +1,49 @@
+<!doctype html>
+	<html>
+		<head>
+			<title>
+				Keeping
+			</title>
+			
+<link rel="shortcut icon" href="http://www.iitbhu.ac.in/itbhu.ico" type="image/x-icon" />
+			<link rel="stylesheet" href="{{url_for('static',filename='my_css.css')}}"/>
+		<script src="{{url_for('static',filename='jquery.js')}}"></script>
+		<script src="{{url_for('static',filename='jsq2.js')}}" type="text/javascript" ,charset="utf-8"></script>
+		</head>
+		<body class="body" id="bg_img" style="background:linear-gradient(60deg,green,yellow,aqua);max-height:100%;">
+		<h1 id="LOAD"></h1>
+			<div class="home">
+			<div class="form">
+			<div class="notice">	Please Login To Your Account </div>
+			<form action="/login/" method="POST">
+			<input id="e-mail" class="inp" type='text' name="mail" size="20" placeholder="Username/Email" required="required"/>
+			<input id="pswrd" type='password' class="inp"name="pswd" size="20" placeholder="Password"required="required"/>
+			<div class="button-joint">
+			<input type="submit" class="button"  name="b2" id="sub"  value="Submit"></input>	
+			<button name="b1" id="reg" class="button" onclick="redirect()">Register</button>
+			</div>
+			</form>
+			</div>
+			</div>
+			<script type="text/javascript" charset="utf-8">
+			var t=0;
+			function al()
+			{	if(t%2==0)
+				{
+				$('.body').css('background','linear-gradient(60deg,green,yellow,green)');
+				}
+				else
+				{
+				$('.body').css('background','linear-gradient(60deg,aqua,yellow,aqua)');
+				}
+				t=t+1;
+			}
+			function redirect()
+			{
+				window.location="/register/";
+			}
+				$(document).ready(function(){
+				window.setInterval(al,10000);});
+			</script>
+	</body>
+	</html>

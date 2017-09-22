@@ -1,0 +1,72 @@
+<!doctype html>
+
+</body>
+</html>
+	<html>
+		<head>
+		
+<link rel="shortcut icon" href="http://www.iitbhu.ac.in/itbhu.ico" type="image/x-icon" />
+		<style>
+			.table
+			{
+				margin-top:50px;
+			}
+			table
+			{
+				border:2px solid black;
+			}
+			th
+			{
+				border:2px solid black;
+				width:200px;
+				text-align:center;
+			}
+			td
+			{
+				border:1px solid black;
+				width:200px;
+				text-align:center;
+			}
+		</style> <link rel="stylesheet" href="{{url_for('static',filename='course/css/course_style.css')}}">	
+			<title>
+				Slots Filled
+			</title>
+		</head>
+		<body class="body2" id="bg_img" style="background:linear-gradient(60deg,green,yellow,aqua);height:640px;overflow:clip;">
+			<header>
+                <img src="{{url_for('static',filename='course/img/logo.jpg')}}" class="imgh" />
+                <a href="/login_home/">
+                <button id="styling">Login</button>
+                    </a>
+            </header>
+			<div class="table" align='center'>
+				<table align="center">
+				<tr>
+					<th>
+						Department
+					</th>
+					<th>
+						Name
+					</th>
+					<th>
+						Last updated
+					</th>
+					</tr>
+					{% for i in data %}
+					<tr>
+					<td>
+						{{ i[0].upper() }}
+					</td>
+					<td>
+						{{ i[1] }}
+					</td>
+					<td>
+						{{ i[2] }}
+					</td>
+					</td>
+					</tr>
+					{% endfor %}
+				</table>
+			</div>
+		</body>
+	</html>

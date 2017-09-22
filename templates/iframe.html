@@ -1,0 +1,30 @@
+<!doctype html>
+	<html>
+		<head>
+			<title>
+			{{user}}
+			</title>
+		</head>
+		<body>
+			<script src="{{j_s}}"></script>
+			<script type="text/javascript" src="{{j_q}}"></script>
+			<script type="text/javascript" charset="utf-8">
+				$(document).ready(function(){
+					var socket = io.connect();
+
+        // the socket.io documentation recommends sending an explicit package upon connection
+					socket.on('connect', function() {
+					socket.emit('connect', {data: 'I\'m connected!'});
+							});
+
+			/*	$('#msg_sent').on('input', function(event) {
+					socket.emit('msg_sent', {who:'msg',data: $('#msg').val()});
+					return false;
+							   });
+							   */
+						});
+			</script>
+			<input name="message" type='text'  {{hidden}} placeholder='your message here' id="msg" size='20'></input>
+			<input name='msg_but' id="msg_sent" type='button' {{hidden}} size='20' value="Send"></input>
+		</body>
+	</html>

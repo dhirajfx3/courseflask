@@ -1,0 +1,98 @@
+<!--APP WALI FILE -->
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700italic,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="{{url_for('static',filename='css/reset.css')}}"> <!-- CSS reset -->
+	<link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}"> <!-- Resource style -->
+	<script src="{{url_for('static',filename='js/modernizr.js')}}"></script> <!-- Modernizr -->
+  	
+	<title>IIT BHU</title>
+	
+<link rel="shortcut icon" href="http://www.iitbhu.ac.in/itbhu.ico" type="image/x-icon" />
+</head>
+<body>
+	<header>
+        <div class="cd-logo">
+            <a target="_blank" href="http://www.iitbhu.ac.in/"><img class="cd-logo-img" src="{{url_for('static',filename='img/logo.jpg')}}"></a>
+        </div>
+		<button class="cd-nav-trigger">Menu<span aria="true" class="cd-icon"></span></button>
+    </header>
+    <a href="login_home/">
+    <button id="styling" >Login</button>
+        </a>
+	<nav class="cd-primary-nav" >
+		<ul>
+			<li class="cd-label">Navigation</li>
+			<li ><a href="team">The team</a></li>
+			<li><a href="about">About Us </a></li>
+			<li><a href="contact_forum">Contact forum</a></li>
+		</ul>
+	</nav> <!-- .cd-primary-nav -->
+	
+	<div class="cd-projects-container">
+		<ul>
+			<li class="single-project">
+				<div class="cd-title">
+					<h2 class="modified">Department</h2>
+				</div> <!-- .cd-title -->
+
+				<div class="cd-project-info">
+					<button class="cd-scroll">Scroll down</button>
+					
+					<div class="content-wrapper">
+                        <ul class="cd-ul">
+                            <li class="li"><a href="/cse/">Computer Science and engineering</a></li>
+							<li class="li"><a href="/mnc/">Department of Applied Mathematics</a></li>
+							<li class="li"><a href="/ee/">Electrical Engineering </a></li>
+							<li class="li"><a href="/ece/">Electronics Engineering</a></li>
+							<li class="li"><a href="/physics/">Department of Physics</a></li>
+                        </ul>
+					</div>
+				</div> <!-- .cd-project-info -->
+			</li>
+
+			<li class="single-project">
+				<div class="cd-title">
+					<h2 class="modified" id="wise">Course wise</h2>
+				</div> <!-- .cd-title -->
+
+				<div class="cd-project-info" >
+                <button class="cd-scroll">Scroll down</button>
+					<div class="content-wrapper">
+                        <ul class="cd-ul">
+                            <li class="li"><a href="/exampapers/">Examinations</a></li>
+                            <li class="li"><a href="/tutorials/">Tutorials</a></li>
+                            <li class="li"><a href="/assignments/">Assignments</a></li>
+                            <li class="li"><a href="http://www.iitbhu.ac.in/news/">Important update</a></li>
+                        </ul>
+					</div>
+				</div> <!-- .cd-project-info -->
+			</li>
+
+			<li class="single-project">
+				<div class="cd-title">
+					<h2 class="modified">Slots availabity</h2>
+				</div> <!-- .cd-title -->
+
+				<div class="cd-project-info">
+					<button class="cd-scroll">Scroll down</button>
+					
+					<div class="content-wrapper">
+                        <ul class="cd-ul">
+                            <li class="li"><a href="/slotsfilled/">Slots Filled</a></li>
+                            <li class="li"><a href="/slotsavail/">Slots Availability</a></li>
+                            <li class="li"><a href="/slotmanage/">Slots Management </a></li>
+                        </ul>
+					</div>
+				</div> <!-- .cd-project-info -->
+			</li>
+		</ul>
+	</div> <!-- .cd-projects-container -->
+<script src="{{url_for('static',filename='js/jquery-2.1.4.js')}}"></script>
+<script src="{{url_for('static',filename='js/main.js')}}"></script> <!-- Resource jQuery -->
+</body>
+</html>

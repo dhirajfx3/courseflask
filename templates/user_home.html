@@ -1,0 +1,84 @@
+<!-- user -username
+	logout -image
+	search -search
+	sn -button
+	add -aff file
+	an -add now
+-->
+<!doctype html>
+	<html>
+		<head>
+			<title>
+				Home {{user}}
+			</title>
+			
+<link rel="shortcut icon" href="http://www.iitbhu.ac.in/itbhu.ico" type="image/x-icon" />
+		<link rel="stylesheet" href="{{url_for('static',filename='my_css.css')}}"/>
+		<script src="{{url_for('static',filename='jquery.js')}}"></script>
+		<script src="{{url_for('static',filename='jsq2.js')}}" type="text/javascript" ,charset="utf-8"></script>
+		</head>
+	<body class="body2" id="bg_img" style="background:linear-gradient(60deg,green,yellow,aqua);height:640px;overflow:clip;">
+	<h1 align='center' class="text2" > Welcome <br> <i>File upload and Chat</i><br> </h1>
+	<text align='left'  class="text1" style="margin-left:2%;"> {{user}} </text>
+	<form action='/logout/' name='f1' method="POST" >
+		<input type='text' name='mail'  value='{{mail}}' hidden='hidden'/>
+		<input type='submit' class="log"  value="Logout" id='log_o' />
+	</form>
+	<form action='/search/' name='f1' value='' method="POST">
+	<h4 align='center'>
+		<label for='srch' >
+			<img src='{{search}}' class="home_img" width='200' height='80'/>
+		</label>
+		<br>
+		<input type='search' name='search' class="inp2"id='srch' size='40'
+		placeholder='Search person exactly by e-mail'/>
+		<br>
+		<input  type="text" name='mail' value='{{mail}}' hidden="hidden"></input>
+		<input type='submit' id='click' value="Submit" ></input>
+	</form>
+	</h4>
+	</h4>
+	<br><br>
+	<div class="fileup">
+	<form action="/file_upload/" method="post" enctype="multipart/form-data">
+		<input type="radio" name="file_type"	value="assignment" checked="checked"></input><tag style="color:Green;">Assignment</tag>
+		<br>
+		<input type="radio" name="file_type" value="tutorial"></input><tag style="color:Red">Tutorial</tag>
+		<br>
+		<input type="radio" name="file_type" value="exampaper"></input><tag style="color:Blue">Previous Year exampaper</tag>
+		<br>
+		<select name='dept' >
+		<option   value='cse' selected>Computer Science And Engineering</option></br>
+		<option   value='mnc'>Mathematical Sciences</option></br>
+		<option   value='ee'selected>Electrical</option></br>
+		<option   value='ece'>Electronics</option></br>
+		<option   value='physics'>Physics</option></br>
+	</select>
+		<input type="file" name="file" required></input></br>
+		<input type="submit" id="button_1" value="Upload and submit"></input>
+	</form>
+	</div>
+	</body>
+	<script type="text/javascript" charset="utf-8">
+			var t=0;
+			function al()
+			{	if(t%2==0)
+				{
+				$('.body2').css('background','linear-gradient(60deg,green,yellow,green)');
+				}
+				else
+				{
+				$('.body2').css('background','linear-gradient(60deg,aqua,yellow,aqua)');
+				}
+				t=t+1;
+			}
+				$(document).ready(function(){
+				$('#srch').focus(function(){
+				document.getElementById('srch').placeholder="";});
+				$('#srch').focusout(function(){
+				document.getElementById('srch').placeholder="Search person exactly by e-mail";
+											});
+				window.setInterval(al,10000);});
+			</script>
+	</html>
+	
